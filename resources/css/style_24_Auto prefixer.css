@@ -1,0 +1,579 @@
+/*
+Orange Color: #e67e22
+
+*/
+
+
+/* ---------------------------------------- */
+/* BASIC SETUP */
+/* ---------------------------------------- */
+
+* {
+    margin: 0;  /* Always have margin: 0 */
+    padding: 0; /* Always have padding: 0 */
+    box-sizing: border-box;  /* Box Sizing = Border Box */
+}
+
+html,
+body {
+    background-color: #fff;  /* Background Colour = White */
+    color: #555;  /* Font Colour = Gray */
+    font-family: 'Lato', 'Arial', sans-serif; /* Font Style priorotised based on User */
+    font-weight: 300;  /* Font Weight = Font Thickness */
+    font-size: 20px;  /* Font Size = Text Size */
+    text-rendering: optimizeLegibility;  /* Font rendering will be done in a perfect way */
+    overflow-x: hidden;  /* While we change the screen resolution to mobile size, the text in the webpage goes outside the borders. To avoid that we use this function */  /* Also this applies for the whole body, hence we add BODY above */
+}
+
+.clearfix {zoom: 1}  /* This clearfix command is used to clear the unwanted cloat created at the meals section */
+.clearfix:after {
+    content: '.';
+    clear: both;
+    display: block;
+    height: 0;
+    visibility: hidden;
+}
+
+/* ---------------------------------------- */
+/* REUSABLE COMPONENTS */
+/* ---------------------------------------- */
+
+
+.row {
+    max-width: 1140px;
+    margin: 0 auto;  /* Left & Right Margin set to auto which Centres the Text */
+}
+
+section {  
+    padding: 80px 0;  /* We need white space for the 4 columns in the page bottom. Since at a later point we plan to use background images, it is better to use padding rather than margin */
+}
+
+.box {
+    padding: 1%  /* Padding for the 4 olumns is 1% */
+}
+
+/* ----- HEADINGS ----- */
+h1, 
+h2,
+h3 {
+    font-weight: 300;  /* Font thickness */
+    text-transform: uppercase;  /* Uppercase */
+}
+
+h1 {
+    margin-top: 0;  /* Since normalise brings a default margin, we set the margin to 0 */
+    margin-bottom: 20px;
+    color: #fff;  /*Change the color of text to white since we have dark background */
+    font-size: 240%;  /* Increase the font size by 200% */
+    word-spacing: 4px;  /* Word spacing */
+    letter-spacing: 1px;  /* Letter spacing */
+}
+
+h2 {
+    font-size: 180%;
+    word-spacing: 2px;
+    text-align: center;
+    margin-bottom: 30px;
+    letter-spacing: 1px;  /* Letter spacing */
+}
+
+h3 {
+    font-size: 110%;  /* 4 column heading font side mentioned */
+    margin-bottom: 15px;  /* Bottom margin mentioned */
+}
+
+h2:after {  /* Content can be put in a website directly from CSS with this element AFTER */
+    display: block;
+    height: 2px;
+    background-color: #e67e22;
+    content: " ";  /* AFTER element must always contain a content. Now we want a blank content hence the quotes with no content inside */
+    width: 100px;  /* Box width is 100px */
+    margin: 0 auto;  /* The line underneath has to be centered */
+    margin-top: 30px;  /*Margin top of this line is specified for gap between text and bottom line */
+}
+
+/* ----- PARAGRAPHS ----- */
+.long-copy {
+    line-height: 145%;  /* Space between lines is specified */
+    width: 70%; /* Width of text box was earlier too long. So we limit the width */
+    margin-left: 15%;  /* Since overall width is 70%, we have left side margin 15%. Hence right side will automatically be 15% */
+}
+
+.box p {
+    font-size: 90%;  /* 4 paragraphs font size mentioned */
+    line-height: 145%;  /* line spacing mentioned */
+}
+
+
+/* ----- ICONS ----- */
+.icon-big {
+    font-size: 350%;  /* Increase the icon size */
+    display: block;  /* Set icon as a block */
+    color: #e67e22;
+    margin-bottom: 10px;
+}
+
+.icon-small {
+    display: inline-block;
+    width: 30px;
+    text-align: center;
+    color: #e67e22;
+    font-size: 120%;
+    margin-right: 10px;
+    
+    /* secrets to align text and icons */
+    line-height: 120%;
+    vertical-align: middle;
+    margin-top: -5px;
+}
+
+/* ----- LINKS ----- */
+
+a:link,
+a:visited {
+    color: #e67e22;
+    text-decoration: none;  /* Remove underline */
+    padding-bottom: 1px;
+    border-bottom: 1px solid #e67e22;
+    transition: border-bottom 0.2s, color 0.2s;
+}
+
+a:hover,
+a:active {
+    color: #555;
+    border-bottom: 1px solid transparent;
+}
+
+/* ----- BUTTONS ----- */
+.btn:link,  /* This is A element in normal state */
+.btn:visited,  /* This is A element in visited state */
+input[type=submit] {  /* During building contact form, we want to standardise Submit button like other buttons */
+    display: inline-block;  /* Buttons to be displayed as Inline-Block element */
+    padding: 10px 30px;  /* Provide padding */
+    font-weight: 300;  /* Font thickness */
+    text-decoration: none; /* Remove the underline from button */
+    border-radius: 200px;  /* Button radius provided for button oval shape instead of rectangle */
+    transition: background-color 0.2s; border 0.2s, color 0.2s;  /* Background color, border, font color changes with transition time of 0.2s */
+}
+    
+.btn-full:link,
+.btn-full:visited,
+input[type=submit] {
+    background-color: #e67e22;  /* Background colour changed to Orange */
+    border: 1px solid #e67e22;  /* Since ghost element has a border, this button also has a border to match same size */
+    color: #fff;  /* Font color is white */
+    margin-right: 15px;  /*Since both buttons are close to each other, we have a margin of 15px */
+}
+
+.btn-ghost:link,
+.btn-ghost:visited {
+    border: 1px solid #e67e22;  /* 1px Solid line and Orange */
+    color: #e67e22;  /* Font color is orange */ 
+}
+
+.btn:hover,  /* When the mouse is hovered */  
+.btn:active,  /* When the ouse is clicked */ 
+ input[type=submit]:hover,  /* Hover effect for Submit button */
+ input[type=submit]:active {   
+    background-color: #cf6d17;  /* When we hover, the background color changes */
+}
+
+.btn-full:hover,
+.btn-full:active,
+input[type=submit] {
+    border: 1px solid #cf6d17;
+}
+
+.btn-ghost:hover,
+.btn-ghost:active {
+    border: 1px solid #cf6d17;
+    color: #fff;  /* When we hover, the font color also changes */
+}
+
+
+/* ---------------------------------------- */
+/* HEADER */
+/* ---------------------------------------- */
+
+header {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(img/hero.jpg);  /* 1.Import the background image. 2.Add a linear gradient of black shade with transparancy 70% */
+    height: 100vh;  /* Now the image occupies 100% of viewport */
+    background-size: cover;  /* To have the image perfectly fit the screen, we mention COVER */
+    background-position: center;  /* To centre the image */
+    background-attachment: fixed;
+}
+
+.hero-text-box {  /* The main text is positioned as below */
+    position: absolute;  /* We do not use grid since we have to position in the middle */
+    width: 1140px;  /*This is the default value for full width */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.logo {  /* Logo settings */
+    height: 100px; 
+    width: auto;
+    float: left;
+    margin-top: 20px;
+}
+
+.main-nav {
+    float: right;  /* Move the navigation to the right side */
+    list-style: none;  /* Remove bullet points */
+    margin: 55px;  /* To match the nav with middle of logo */
+}
+
+.main-nav li {
+    display: inline-block;  /* Modify the navigation from block element to inline element */
+    margin-left: 40px;  /* Left margin of 40px */
+}
+
+.main-nav li a:link,
+.main-nav li a:visited {
+    padding: 8px 0;  /* Provide padding so that the hover border in the bottom has a gap from the text */
+    color: #fff;  /*White color font */
+    text-decoration: none;  /* Remove underline */
+    text-transform: uppercase;  /* Upper case */
+    font-size: 90%; /* Font size 90% or 20px is 18px */
+    border-bottom: 2px solid transparent;  /* To execute below command, we have to give border for this element also. Hence we give transparent border */
+    transition: border-bottom 0.2s; /* Provide smooth transition */
+}
+
+.main-nav li a:hover,
+.main-nav li a:active {
+    border-bottom: 2px solid #e67e22;  /* Border displays when we hover it. But for this to be visible we also have to give the border for visited type */
+}
+
+/* ---------------------------------------- */
+/* FEATURES */
+/* ---------------------------------------- */
+
+.section-features .long-copy{  /* Space between the main header paragraph and 4 column is added */
+    margin-bottom: 40px
+}
+
+
+/* ---------------------------------------- */
+/* MEALS */
+/* ---------------------------------------- */
+
+.section-meals {
+    padding: 0;
+}
+
+.meals-showcase {
+    list-style: none;  /*To avoid bullet points */
+    width: 100%  /* Entire browser width */
+}
+
+.meals-showcase li {
+    display: block;
+    float: left;  /* We want to showcase side by side */
+    width: 25%;  /* since we have 4 images */
+}
+
+.meal-photo {
+    width: 100%;  /* 100% means it has exact width of its parent */
+    margin: 0;
+    overflow: hidden;  /* Since we have transformed the image to 115% below, we have to crop the image to container size */
+    background-color: #000;  /* To make a black background so that when we add opacity, it has a dark effect */
+}
+
+.meal-photo img {
+    opacity: 0.7;  /* An opacity of 70% is added */
+    width: 100%;  /* Image will be 100% of its container */
+    height: auto;
+    transform: scale(1.15);  /* The image is scaled to 115% of original size */
+    transition: transform 0.5s, opacity 0.5s;  /*Timing for transform and opacity to happen */
+}
+
+.meal-photo img:hover {  /* Hover effect works not only for links but for every other element */
+    opacity: 1;
+    transform: scale(1.03);  /* If we re scale it to 1.0, the white border is visible under image, so we scale to 1.03 */
+}
+
+
+
+/* ---------------------------------------- */
+/* HOW IT WORKS */
+/* ---------------------------------------- */
+
+.section-steps {
+    background-color: #f4f4f4;
+}
+
+.steps-box:first-child {  /* pseudo class first child selects the first of step boxes. In our case it is the left box */
+    text-align: right;  /* Though we do not have text, images are also aligned to right side. This command works for inline and inline-block elements */
+    padding-right: 3%;  /* responsive web design gives the layout as fluid form. Hence we use % */
+    margin-top: 30px;
+}
+
+.steps-box:last-child {
+    padding-left: 3%;
+    margin-top: 70px;
+}
+
+.app-screen {  /* Class name is app-screen */
+    width: 40%;
+}
+
+.works-step {  /* Bottom margin set generically for works-step */
+    margin-bottom: 50px;
+}
+
+.works-step:last-of-type {  /* This function is also similar to first-child, last-child, but this function means for the last one(S.No.3 in this case) */
+    margin-bottom: 80px;
+    
+}
+
+.works-step div {  /* The number are formatted */
+    color: #e67e22;
+    border: 2px solid #e67e22;
+    display: inline-block;  /* To bring number and text side by side */
+    border-radius: 50%;
+    height: 55px;
+    width: 55px;
+    text-align: center;
+    padding: 5px;
+    float: left;
+    font-size: 150%;
+    margin-right: 25px;
+}
+
+.btn-app:link,
+.btn-app:visited {
+    border: 0;
+}
+
+.btn-app img {  /* Need to format the image inside button app */
+    height: 50px;
+    width: auto;
+    margin-right: 10px;
+    
+}
+
+
+/* ---------------------------------------- */
+/* CITIES */
+/* ---------------------------------------- */
+
+.box img {  /* Our requirement is for image to be exactly as wide as the box */
+    width: 100%;
+    height: auto;
+    margin-bottom: 15px;
+}
+
+.city-feature {  /* bottom margin for the 3 rows */
+    margin-bottom: 5px;
+}
+
+
+/* ---------------------------------------- */
+/* TESTIMONIALS */
+/* ---------------------------------------- */
+
+.section-testimonials {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), url(img/back-customers.jpg);
+    background-size: cover;
+    color: #fff;
+    background-attachment: fixed;
+}
+
+blockquote {
+    padding: 2%;
+    font-style: italic;
+    line-height: 145%;
+    position: relative;
+    margin-top: 40px;
+}
+
+blockquote:before {  /* This is a pseudo class. For adding quotation mark before testimonial write up */
+    content: "\201C";
+    font-size: 500%;
+    display: block; 
+    position: absolute;  /* When an element is made as absolute position, we have to make sure that parent is relative position */
+    top: -5px;
+    left: -5px;
+}
+
+cite {
+    font-size: 90%;
+    margin-top: 25px;
+    display: block;  /* To have customer image and name as seperate block */
+}
+
+cite img {
+    height: 45px;
+    border-radius: 50%;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+
+/* ---------------------------------------- */
+/* SIGN UP */
+/* ---------------------------------------- */
+
+.section-plans {
+    background-color: #f4f4f4;
+}
+
+.plan-box {
+    background-color: #fff;
+    border-radius: 5px;
+    width: 90%;
+    margin-left: 5%;
+    box-shadow: 0 2px 2px #efefef; /* X Axis offset, Y Axis offset , Blur , Color */
+}
+
+.plan-box div {
+    padding: 15px;
+    border-bottom: 1px solid #e8e8e8;  /* Border between subsections */
+}
+
+.plan-box div:first-child {
+    background-color: #fcfcfc;  
+    border-top-left-radius: 5px;  /* Since the background color was changed, the round border was removed. Hence we add the round border */
+    border-top-right-radius: 5px;
+}
+
+.plan-box div:last-child {
+    text-align: center;
+    border: 0;
+}
+
+.plan-price {
+    font-size: 300%;
+    margin-bottom: 10px;
+    font-weight: 100;
+    color: #e67e22;
+}
+
+.plan-price span {
+    font-size: 30%;  /* This size is the child element of plan-price. Hence this 30% is 30% of 300% */
+    font-weight: 300;
+}
+
+.plan-price-meal {
+    font-size: 80%
+}
+
+.plan-box ul {
+    list-style: none;
+}
+
+.plan-box ul li {
+    padding: 5px 0;
+}
+
+
+/* ---------------------------------------- */
+/* FORM */
+/* ---------------------------------------- */
+
+.contact-form {
+    width: 60%;
+    margin: 0 auto;
+}
+
+input[type=text],
+input[type=email],
+select,
+textarea {
+    width: 100%;
+    padding: 7px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+}
+
+textarea {
+    height: 100px;
+}
+
+input[type=checkbox] {
+    margin: 10px 5px 10px 0;  /* Margin for the checkbox */
+}
+
+*:focus {outline: none;}  /* While we click on the textbox Google Chrome shows a blue box around the text box. To remove the blue border this commant is used */
+
+
+/* ---------------------------------------- */
+/* FOOTER */
+/* ---------------------------------------- */
+
+footer {
+    background-color: #333;
+    padding: 50px;
+    font-size: 80%
+}
+
+.footer-nav {
+    list-style: none;
+    float: left;
+}
+
+.social-links {
+   list-style: none;
+    float: right; 
+}
+
+.footer-nav li,
+.social-links li {
+    display: inline-block;
+    margin-right: 20px;
+}
+
+.footer-nav li:last-child,
+.social-links li:last-child {
+    margin-right: 0;  /* Margin right is made ZERO to move the social-links to the right end without a margin since we previously gave pargin right for all elements */
+}
+
+.footer-nav li a:link,
+.footer-nav li a:visited,
+.social-links li a:link,
+.social-links li a:visited {
+    text-decoration: none;
+    border: 0;
+    color: #888;
+    transition: color: 0.2s;
+}
+
+.footer-nav li a:hover,
+.footer-nav li a:active {
+    color: #ddd;
+}
+
+.social-links li a:link,
+.social-links li a:visited {
+    font-size: 160%;
+}
+
+.ion-social-facebook,
+.ion-social-twitter,
+.ion-social-googleplus,
+.ion-social-instagram {
+    transition: color: 0.2s;
+}
+
+.ion-social-facebook:hover {
+    color: #3b5998;
+}
+
+.ion-social-twitter:hover {
+    color: #00aced;
+}
+
+.ion-social-googleplus:hover {
+    color: #dd4b39;
+}
+
+.ion-social-instagram:hover {
+    color: #517fa4;
+}
+
+footer p {
+    color: #888;
+    text-align:center;
+    margin-top: 20px;
+}

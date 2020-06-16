@@ -1,0 +1,36 @@
+/* Big tablets to 1200px (width smaller than the 1140px row) */
+@media only screen and (max-width: 1200px) {
+    .hero-text-box {  /* The hero text box previously was 1140px and now modified to 100%, so when display size reduces, it matches to the changing width 100% */
+        width: 100%;
+        padding: 0 2%;
+    }
+    
+    .row { padding: 0 2%; }  /* All rows are given padding */  /* Since we have only 1 row, the curly bracket is put in the same row */
+}
+
+
+/* Small tablets to Big tablets: 768ps to 1023px */
+@media only screen and (max-width: 1023px) {
+    body { font-size: 18px; }
+    section { padding: 60px 0; }
+    
+    .long-copy {
+        width: 80%;  /* Width to be 80% since a 10% padding applies */
+        margin-left: 10%;
+    }
+    
+    
+}
+
+
+/* Small phones to Small tablets: from 481px to 767px */
+@media only screen and (max-width: 767px) {
+    
+}
+
+
+
+/* Small phones: from 0 to 480px */
+@media only screen and (max-width: 480px) {
+    
+}

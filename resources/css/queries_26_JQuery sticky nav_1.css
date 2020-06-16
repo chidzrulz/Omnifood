@@ -1,0 +1,91 @@
+/* Big tablets to 1200px (width smaller than the 1140px row) */
+@media only screen and (max-width: 1200px) {
+    .hero-text-box {  /* The hero text box previously was 1140px and now modified to 100%, so when display size reduces, it matches to the changing width 100% */
+        width: 100%;
+        padding: 0 2%;
+    }
+    
+    .row { padding: 0 2%; }  /* All rows are given padding */  /* Since we have only 1 row, the curly bracket is put in the same row */
+}
+
+
+/* Small tablets to Big tablets: 768ps to 1023px */
+@media only screen and (max-width: 1023px) {
+    body { font-size: 18px; }
+    section { padding: 60px 0; }
+    
+    .long-copy {
+        width: 80%;  /* Width to be 80% since a 10% padding applies */
+        margin-left: 10%;
+    }
+    
+    .steps-box { margin-top: 10px; }
+    .steps-box:last-child { margin-top: 10px; }
+    .works-steps { margin-bottom: 40px; }
+    .works-step:last-of-type { margin-bottom: 60px; }
+    
+    .app-screen { width: 50%; }
+    
+    .icon-small { 
+        width: 17px; 
+        margin-right: 5px;
+    }
+    
+    .city-feature { font-size: 90%; }
+    
+    .plan-box {
+        width: 100%;
+        margin-left: 0%;
+    }
+    
+    .plan-price { font-size: 250%; }
+    .contact-form { width: 80%}
+    
+}
+
+
+/* Small phones to Small tablets: from 481px to 767px */
+@media only screen and (max-width: 767px) {
+    body { font-size: 16px; }
+    section { padding: 30px 0; }
+    
+    .row,
+    .hero-text-box { padding: 0 4%; }
+    .col { 
+        width: 100%;  /* Columns will no longer be side by side but stacked one on top of the other */
+        margin: 0 0 4% 0; /* Since these columns are taken from grid.css we have a default value entered in grid file. So we have to change it to the following values */
+    
+    }  
+    .main-nav { display: none; }  /* Temporarily remove navigations */
+    
+    h1 { font-size: 180%; }
+    h2 { font-size: 150%; }
+    
+    .long-copy {
+        width: 100%;
+        margin-left: 0%;
+    }
+    
+    .app-screen { width: 40%; }
+    .steps-box:first-child { text-align: center; }
+    
+    .works-step div {
+        height: 40px;
+        width: 40px;
+        margin-right: 15px;
+        padding: 4px;
+        font-size: 120%;
+    }
+    
+    .works-step { margin-bottom: 20px; }
+    .works-step:last-of-type { margin-bottom: 20px; }
+    
+}
+
+
+
+/* Small phones: from 0 to 480px */
+@media only screen and (max-width: 480px) {
+    section { padding: 25px 0; }
+    contact-form {width: 100%; }
+}

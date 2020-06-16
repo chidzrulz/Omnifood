@@ -1,0 +1,230 @@
+/*
+Orange Color: #e67e22
+
+*/
+
+
+/* ---------------------------------------- */
+/* BASIC SETUP */
+/* ---------------------------------------- */
+
+* {
+    margin: 0;  /* Always have margin: 0 */
+    padding: 0; /* Always have padding: 0 */
+    box-sizing: border-box;  /* Box Sizing = Border Box */
+}
+
+html {
+    background-color: #fff;  /* Background Colour = White */
+    color: #555;  /* Font Colour = Gray */
+    font-family: 'Lato', 'Arial', sans-serif; /* Font Style priorotised based on User */
+    font-weight: 300;  /* Font Weight = Font Thickness */
+    font-size: 20px;  /* Font Size = Text Size */
+    text-rendering: optimizeLegibility;  /* Font rendering will be done in a perfect way */
+}
+
+
+/* ---------------------------------------- */
+/* REUSABLE COMPONENTS */
+/* ---------------------------------------- */
+
+
+.row {
+    max-width: 1140px;
+    margin: 0 auto;  /* Left & Right Margin set to auto which Centres the Text */
+}
+
+section {  
+    padding: 80px 0;  /* We need white space for the 4 columns in the page bottom. Since at a later point we plan to use background images, it is better to use padding rather than margin */
+}
+
+.box {
+    padding: 1%  /* Padding for the 4 olumns is 1% */
+}
+
+/* ----- HEADINGS ----- */
+h1, 
+h2,
+h3 {
+    font-weight: 300;  /* Font thickness */
+    text-transform: uppercase;  /* Uppercase */
+}
+
+h1 {
+    margin-top: 0;  /* Since normalise brings a default margin, we set the margin to 0 */
+    margin-bottom: 20px;
+    color: #fff;  /*Change the color of text to white since we have dark background */
+    font-size: 240%;  /* Increase the font size by 200% */
+    word-spacing: 4px;  /* Word spacing */
+    letter-spacing: 1px;  /* Letter spacing */
+}
+
+h2 {
+    font-size: 180%;
+    word-spacing: 2px;
+    text-align: center;
+    margin-bottom: 30px;
+    letter-spacing: 1px;  /* Letter spacing */
+}
+
+h3 {
+    font-size: 110%;  /* 4 column heading font side mentioned */
+    margin-bottom: 15px;  /* Bottom margin mentioned */
+}
+
+h2:after {  /* Content can be put in a website directly from CSS with this element AFTER */
+    display: block;
+    height: 2px;
+    background-color: #e67e22;
+    content: " ";  /* AFTER element must always contain a content. Now we want a blank content hence the quotes with no content inside */
+    width: 100px;  /* Box width is 100px */
+    margin: 0 auto;  /* The line underneath has to be centered */
+    margin-top: 30px;  /*Margin top of this line is specified for gap between text and bottom line */
+}
+
+/* ----- PARAGRAPHS ----- */
+.long-copy {
+    line-height: 145%;  /* Space between lines is specified */
+    width: 70%; /* Width of text box was earlier too long. So we limit the width */
+    margin-left: 15%;  /* Since overall width is 70%, we have left side margin 15%. Hence right side will automatically be 15% */
+}
+
+.box p {
+    font-size: 90%;  /* 4 paragraphs font size mentioned */
+    line-height: 145%;  /* line spacing mentioned */
+}
+
+
+/* ----- ICONS ----- */
+.icon-big {
+    font-size: 350%;  /* Increase the icon size */
+    display: block;  /* Set icon as a block */
+    color: #e67e22;
+    margin-bottom: 10px;
+}
+
+
+
+
+/* ----- BUTTONS ----- */
+.btn:link,  /* This is A element in normal state */
+.btn:visited {  /* This is A element in visited state */
+    display: inline-block;  /* Buttons to be displayed as Inline-Block element */
+    padding: 10px 30px;  /* Provide padding */
+    font-weight: 300;  /* Font thickness */
+    text-decoration: none; /* Remove the underline from button */
+    border-radius: 200px;  /* Button radius provided for button oval shape instead of rectangle */
+    transition: background-color 0.2s; border 0.2s, color 0.2s;  /* Background color, border, font color changes with transition time of 0.2s */
+}
+    
+.btn-full:link,
+.btn-full:visited {
+    background-color: #e67e22;  /* Background colour changed to Orange */
+    border: 1px solid #e67e22;  /* Since ghost element has a border, this button also has a border to match same size */
+    color: #fff;  /* Font color is white */
+    margin-right: 15px;  /*Since both buttons are close to each other, we have a margin of 15px */
+}
+
+.btn-ghost:link,
+.btn-ghost:visited {
+    border: 1px solid #e67e22;  /* 1px Solid line and Orange */
+    color: #e67e22;  /* Font color is orange */ 
+}
+
+.btn:hover,  /* When the mouse is hovered */  
+.btn:active {  /* When the ouse is clicked */  
+    background-color: #cf6d17;  /* When we hover, the background color changes */
+}
+
+.btn-full:hover,
+.btn-full:active {
+    border: 1px solid #cf6d17;
+}
+
+.btn-ghost:hover,
+.btn-ghost:active {
+    border: 1px solid #cf6d17;
+    color: #fff;  /* When we hover, the font color also changes */
+}
+
+
+/* ---------------------------------------- */
+/* HEADER */
+/* ---------------------------------------- */
+
+header {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(img/hero.jpg);  /* 1.Import the background image. 2.Add a linear gradient of black shade with transparancy 70% */
+    height: 100vh;  /* Now the image occupies 100% of viewport */
+    background-size: cover;  /* To have the image perfectly fit the screen, we mention COVER */
+    background-position: center;  /* To centre the image */
+}
+
+.hero-text-box {  /* The main text is positioned as below */
+    position: absolute;  /* We do not use grid since we have to position in the middle */
+    width: 1140px;  /*This is the default value for full width */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.logo {  /* Logo settings */
+    height: 100px; 
+    width: auto;
+    float: left;
+    margin-top: 20px;
+}
+
+.main-nav {
+    float: right;  /* Move the navigation to the right side */
+    list-style: none;  /* Remove bullet points */
+    margin: 55px;  /* To match the nav with middle of logo */
+}
+
+.main-nav li {
+    display: inline-block;  /* Modify the navigation from block element to inline element */
+    margin-left: 40px;  /* Left margin of 40px */
+}
+
+.main-nav li a:link,
+.main-nav li a:visited {
+    padding: 8px 0;  /* Provide padding so that the hover border in the bottom has a gap from the text */
+    color: #fff;  /*White color font */
+    text-decoration: none;  /* Remove underline */
+    text-transform: uppercase;  /* Upper case */
+    font-size: 90%; /* Font size 90% or 20px is 18px */
+    border-bottom: 2px solid transparent;  /* To execute below command, we have to give border for this element also. Hence we give transparent border */
+    transition: border-bottom 0.2s; /* Provide smooth transition */
+}
+
+.main-nav li a:hover,
+.main-nav li a:active {
+    border-bottom: 2px solid #e67e22;  /* Border displays when we hover it. But for this to be visible we also have to give the border for visited type */
+}
+
+
+
+/* ---------------------------------------- */
+/* MEALS */
+/* ---------------------------------------- */
+
+.meals-showcase {
+    list-style: none;  /*To avoid bullet points */
+    width: 100%  /* Entire browser width */
+
+}
+
+.meals-showcase li {
+    display: block;
+    float: left;  /* We want to showcase side by side */
+    width: 25%;  /* since we have 4 images */
+}
+
+.meal-photo {
+    width: 100%;  /* 100% means it has exact width of its parent */
+    margin: 0;
+}
+
+.meal-photo img {
+    width: 100%;  /* Image will be 100% of its container */
+    height: auto;
+}

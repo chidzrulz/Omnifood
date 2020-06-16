@@ -1,0 +1,19 @@
+* {
+    margin: 0;  /* Always have margin: 0 */
+    padding: 0; /* Always have padding: 0 */
+    box-sizing: border-box;  /* Box Sizing = Border Box */
+}
+
+html {
+    background-color: #fff;  /* Background Colour = White */
+    color: #555;  /* Font Colour = Gray */
+    font-family: 'Lato', 'Arial', sans-serif; /* Font Style priorotised based on User */
+    font-weight: 300;  /* Font Weight = Font Thickness */
+    font-size: 20px;  /* Font Size = Text Size */
+    text-rendering: optimizeLegibility;  /* Font rendering will be done in a perfect way */
+}
+
+.row {
+    max-width: 1140px;
+    margin: 0 auto;
+}
